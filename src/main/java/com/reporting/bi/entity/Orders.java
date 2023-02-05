@@ -29,10 +29,10 @@ public class Orders extends SharedWhoColumns implements Serializable {
 	private UUID orderid;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "customerid", referencedColumnName = "customerid", insertable = true, updatable = true)
+	@JoinColumn(name = "customerid", referencedColumnName = "customerid", insertable = true, updatable = false)
 	private Customers customers;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "productid", referencedColumnName = "productid", insertable = true, updatable = true)
+	@JoinColumn(name = "productid", referencedColumnName = "productid", insertable = true, updatable = false)
 	private Products products;
 }
