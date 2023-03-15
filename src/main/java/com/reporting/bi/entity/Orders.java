@@ -14,10 +14,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "orders")
-public class Orders extends SharedWhoColumns implements Serializable {
+@Table(name = "orders", 
+	uniqueConstraints = {
+			@UniqueConstraint(name = "UniqueByCustomerAndProduct", columnNames = {"customerid", "productid"})
+	})
+public class Orders extends WhoDetailsColumns implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	

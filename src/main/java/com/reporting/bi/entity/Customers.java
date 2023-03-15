@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "customers", uniqueConstraints = @UniqueConstraint(columnNames = {"email", "phone"}))
-public class Customers extends SharedWhoColumns implements Serializable {
+public class Customers extends WhoDetailsColumns implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
