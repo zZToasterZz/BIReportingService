@@ -1,6 +1,5 @@
 package com.reporting.bi.entity;
 
-import java.io.Serializable;
 import java.util.UUID;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -25,12 +24,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "orders", 
+@Table(name = "report_register", 
 	uniqueConstraints = {
-			@UniqueConstraint(name = "UniqueByCustomerAndProduct", columnNames = {"customerid", "productid"})
+			@UniqueConstraint(name = "UniqueByQueryAndTemplate", columnNames = {"queryid", "templateid"})
 	})
-public class Orders extends WhoDetailsColumns implements Serializable {
-
+public class ReportRegister extends WhoDetailsColumns {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -38,13 +36,16 @@ public class Orders extends WhoDetailsColumns implements Serializable {
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Column(updatable = false, nullable = false, columnDefinition = "VARCHAR(36)")
 	@JdbcTypeCode(java.sql.Types.VARCHAR)
-	private UUID orderid;
+	private UUID reportid;
+	
+	@Column
+	private String name;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "customerid", referencedColumnName = "customerid", insertable = true, updatable = false)
-	private Customers customers;
+	@JoinColumn(name = "queryid", referencedColumnName = "queryid", insertable = true, updatable = false)
+	private QueryRegister queryRegister;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "productid", referencedColumnName = "productid", insertable = true, updatable = false)
-	private Products products;
+	@JoinColumn(name = "templateid", referencedColumnName = "templateid", insertable = true, updatable = false)
+	private TemplateRegister templateRegister;
 }

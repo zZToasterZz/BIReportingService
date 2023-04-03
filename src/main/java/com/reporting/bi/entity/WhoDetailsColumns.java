@@ -13,13 +13,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@MappedSuperclass
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class SharedWhoColumns {
+@MappedSuperclass
+public class WhoDetailsColumns {
 	
 	@Column(length = 50)
 	@NotNull
@@ -41,5 +41,5 @@ public class SharedWhoColumns {
 	
 	@Column
 	@NotNull
-	private boolean isActive = true;
+	private Boolean isActive = true;
 }

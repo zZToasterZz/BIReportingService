@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class MainControllerTest {
+class ReportControllerTest {
 
 	@Test
 	void test() {

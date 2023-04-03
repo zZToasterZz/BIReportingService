@@ -6,7 +6,7 @@ import java.util.UUID;
 import com.reporting.bi.constants.Currency;
 import com.reporting.bi.entity.Products;
 
-public record ProductsRecord(UUID productid, 
+public record ProductsModel(UUID productid, 
 		String name, 
 		String description, 
 		Double price, 
@@ -19,7 +19,7 @@ public record ProductsRecord(UUID productid,
 		return products;
 	}
 	
-	public Products getUpdatable(final WhoDetailsRecord caller) {
+	public Products getUpdatable(final WhoDetailsModel caller) {
 		final Products products = new Products(null, name, description, price, currency);
 		products.setModifiedBy(caller.modifiedBy());
 		products.setCreatedOn(null);

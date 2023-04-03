@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "products")
-public class Products extends SharedWhoColumns implements Serializable {
+public class Products extends WhoDetailsColumns implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
