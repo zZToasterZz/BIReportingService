@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class ParamsUtil {
 	
 	String sanitizeFileName(String filename) {
-		return filename.replaceAll("[^a-zA-Z0-9]", "");
+		return filename.replaceAll("[^a-zA-Z0-9\\-]", "");
 	}
 }

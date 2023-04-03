@@ -32,7 +32,7 @@ public class FileHandlingUtil {
 		Files.deleteIfExists(Paths.get(path));
 	}
 	
-	public void createDataFileXML(String dataFileName, String xmlData) throws IOException {
+	public String createDataFileXML(String dataFileName, String xmlData) throws IOException {
 		
 		xmlData = xmlHeader+xmlData;
 		
@@ -47,9 +47,11 @@ public class FileHandlingUtil {
 		final FileWriter fw = new FileWriter(dataFilePath);
 	    fw.write(xmlData);
 	    fw.close();
+	    
+	    return dataFilePath;
 	}
 	
-	public void uploadTemplateFile(final MultipartFile template, final String reportName) throws IOException {
+	public String uploadTemplateFile(final MultipartFile template, final String reportName) throws IOException {
 		
 		String reportTemplatePath = new File("").getAbsolutePath() 
 				+ File.separator + filePathProperties.getTemplatesLocation() 
@@ -70,6 +72,8 @@ public class FileHandlingUtil {
 	    }
 	    out.flush();
 		out.close();
+		
+		return reportTemplatePath;
 	}
 	
 	public void copyFile(final String source, final String target) throws IOException {

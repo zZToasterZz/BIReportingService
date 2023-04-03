@@ -39,6 +39,7 @@ public class ReportGenerator {
 		final String inputFileRTFpath =  new File("").getAbsolutePath() 
 				+ File.separator + filePathProperties.getTemplatesLocation()
 				+File.separator + inputFileName + "." + RTF.extension();
+		
 		final String dataFileXMLpath = new File("").getAbsolutePath() 
 				+ File.separator + filePathProperties.getDataLocation()
 				+File.separator + dataFileXMLname + ".xml";

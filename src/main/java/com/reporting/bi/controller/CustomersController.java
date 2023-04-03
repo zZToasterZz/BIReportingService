@@ -13,6 +13,8 @@ import com.reporting.bi.models.CustomersModel;
 import com.reporting.bi.service.CustomersService;
 import com.reporting.bi.utility.CommonBeansGenerator;
 
+import jakarta.annotation.Resource;
+
 @RestController
 @RequestMapping("/api/customers")
 public class CustomersController {

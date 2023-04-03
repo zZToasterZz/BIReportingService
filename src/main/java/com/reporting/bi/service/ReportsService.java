@@ -29,6 +29,9 @@ import jakarta.persistence.EntityManager;
 public class ReportsService {
 	
 	@Autowired
+	EntityManager em;
+	
+	@Autowired
 	Session hibernateSession;
 
 	@Autowired

@@ -29,4 +29,3 @@ public record CustomersModel(@Nullable UUID customerid,
 		customers.setLastUpdatedOn(LocalDateTime.now());
 		return customers;
 	}
-}
